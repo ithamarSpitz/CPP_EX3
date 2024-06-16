@@ -1,4 +1,4 @@
-#include "Player.hpp"
+#include "Player1.hpp"
 #include <iostream>
 #include <vector>
 #include <string>
@@ -50,7 +50,7 @@ namespace ariel
         return -1; // Return -1 if no non-zero resource card is available
     }
 
-    void Player::useKnight(Board& board, string robbed, string hexa_landscape, int hexa_num, int seven)
+    void Player::useKnight(Board board, string robbed, string hexa_landscape, int hexa_num, int seven)
     {
         // needs to check location - player
 
@@ -128,7 +128,7 @@ namespace ariel
         cout << "you got dev card of:" << devCards[card_type] << endl;
     }
 
-    void Player::rollDice(Board& board)
+    void Player::rollDice(Board board)
     {
         if (!my_turn)
         {
@@ -214,7 +214,7 @@ namespace ariel
         next_turn->my_turn = 1;
     }
 
-    string Player::find_node(vector<string> places, vector<int> placesNum, Board& board)
+    string Player::find_node(vector<string> places, vector<int> placesNum, Board board)
     {
         string nodeName;
         int amount_of_places = places.size();
@@ -257,7 +257,7 @@ namespace ariel
         return 1;
     }
 
-    void Player::placeSettelemnt(vector<string> places, vector<int> placesNum, Board& board)
+    void Player::placeSettelemnt(vector<string> places, vector<int> placesNum, Board board)
     {
         if (!my_turn)
         {
@@ -322,8 +322,7 @@ namespace ariel
             }
         }
     }
-
-    void Player::placeCity(vector<string> places, vector<int> placesNum, Board& board)
+    void Player::placeCity(vector<string> places, vector<int> placesNum, Board board)
     {
         if (!my_turn)
         {
@@ -351,8 +350,8 @@ namespace ariel
             }
         }
     }
-    
-    void Player::placeRoad(vector<string> places, vector<int> placesNum, Board& board)
+
+    void Player::placeRoad(vector<string> places, vector<int> placesNum, Board board)
     {
         if (!my_turn)
         {
@@ -403,4 +402,5 @@ namespace ariel
             }
         }
     }
-}
+
+} // namespace ariel
